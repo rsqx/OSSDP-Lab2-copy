@@ -1,6 +1,6 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package solution;
+
+import java.util.*;
 
 /**
  * @description:
@@ -30,9 +30,9 @@ import java.util.List;
  * nums 中的所有整数 互不相同
  *
  */
-class Solution3 {
+public class Solution3 {
     public List<Integer> largestDivisibleSubset(int[] nums) {
-        int len = nums.length-1;
+        int len = nums.length;    // len改为num数组的真实长度
         Arrays.sort(nums);
 
         // 第 1 步：动态规划找出最大子集的个数、最大子集中的最大整数
@@ -41,7 +41,7 @@ class Solution3 {
         int maxSize = 1;
         int maxVal = dp[0];
         for (int i = 1; i < len; i++) {
-            for (int j = 1; j < i; j++) {
+            for (int j = 0; j < i; j++) {  // j从0开始遍历
                 // 题目中说「没有重复元素」很重要
                 if (nums[i] % nums[j] == 0) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);
@@ -50,7 +50,7 @@ class Solution3 {
 
             if (dp[i] > maxSize) {
                 maxSize = dp[i];
-                maxVal = i;
+                maxVal = nums[i];    // maxVal = i 改为 maxVal = nums[i]
             }
         }
 
@@ -68,6 +68,7 @@ class Solution3 {
                 maxSize--;
             }
         }
+        Collections.reverse(res);  // 将列表倒序，使返回的结果从小到大排序
         return res;
     }
 }
