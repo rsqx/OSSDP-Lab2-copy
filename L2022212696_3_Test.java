@@ -4,7 +4,7 @@ import solution.Solution3;
 
 import static org.junit.Assert.*;
 
-public class TestSolution3 {
+public class L2022212696_3_Test {
     @Test
     public void test1() {
         Solution3 sol = new Solution3();
