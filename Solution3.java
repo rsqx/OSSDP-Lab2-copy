@@ -32,7 +32,7 @@ import java.util.*;
  */
 public class Solution3 {
     public List<Integer> largestDivisibleSubset(int[] nums) {
-        int len = nums.length;    // len改为num数组的真实长度
+        int len = nums.length;    // len = nums.length -1 改为 len = nums.length
         Arrays.sort(nums);
 
         // 第 1 步：动态规划找出最大子集的个数、最大子集中的最大整数
