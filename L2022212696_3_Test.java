@@ -5,6 +5,7 @@ import solution.Solution3;
 import static org.junit.Assert.*;
 
 public class L2022212696_3_Test {
+    // 测试用例1：测试常规情况下的最大整除子集
     @Test
     public void test1() {
         Solution3 sol = new Solution3();
@@ -12,7 +13,7 @@ public class L2022212696_3_Test {
         Integer[] res = {1,2,4,8};
         assertArrayEquals(res, sol.largestDivisibleSubset(arr).toArray());
     }
-
+    // 测试用例2：测试输入数组中没有共同因子的情况
     @Test
     public void test2() {
         Solution3 sol = new Solution3();

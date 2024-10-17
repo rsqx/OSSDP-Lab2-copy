@@ -1,7 +1,5 @@
-package solution;
-
 import java.util.*;
-
+//package没有必要
 /**
  * @description:
  *
@@ -35,7 +33,7 @@ public class Solution3 {
         int len = nums.length;    // len = nums.length -1 改为 len = nums.length
         Arrays.sort(nums);
 
-        // 第 1 步：动态规划找出最大子集的个数、最大子集中的最大整数
+        // 第 1 步：使用动态规划找出每个元素可以构成的最大子集大小
         int[] dp = new int[len];
         Arrays.fill(dp, 1);
         int maxSize = 1;
